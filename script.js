@@ -18,7 +18,7 @@ function formatQueryParams(params) {
               `<li><h3>${responseJson.data[i].fullName}</h3>
               <p>${responseJson.data[i].description}</p>
               <p><a href="${responseJson.data[i].url}">website</a></p>
-              <p>${responseJson.data[i].addresses[0].line1}, ${responseJson.data[i].addresses[0].city}, ${responseJson.data[i].addresses[0].stateCode} ${responseJson.data[i].addresses[0].postalCode}</p>
+              <p>Address: ${responseJson.data[i].addresses[0].line1}, ${responseJson.data[i].addresses[0].city}, ${responseJson.data[i].addresses[0].stateCode} ${responseJson.data[i].addresses[0].postalCode}</p>
               </li>`
           )};
       $('.results').removeAttr('hidden');
