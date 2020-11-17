@@ -1,3 +1,5 @@
+'use strict';
+
 const apiKey = '41fw12RYYwauks4D7f2c0kqLghFZWMbYQLySbdib';
 const searchURL = 'https://developer.nps.gov/api/v1/parks';
 
@@ -12,6 +14,7 @@ function formatQueryParams(params) {
     console.log(responseJson);
 
     $('.results-list').empty();
+    $('.error-message').empty();
 
       for(let i = 0; i < responseJson.data.length; i++) {
           $('.results-list').append(
@@ -58,7 +61,7 @@ function watchGoButton() {
             states.push($(this).val());
         });
 
-        const limit = $('.max-results').val();
+        const limit = $('.max-results').val() || 10 ;
 
         console.log(states);
         console.log(limit);
